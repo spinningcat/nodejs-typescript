@@ -1,0 +1,14 @@
+npx sequelize-cli model:generate --name User --attributes username:string,password:string,password:string,role:enum:'{admin,superUser,user,appUser}',deleteAt:Date
+npx sequelize-cli model:generate --name Observers --attributes username:string,password:string,processId:integer,processTitle:string,countryCode:string,casinoId:integer,operationStatus:enum:'{disconnected, idle, listening, locked}',status:enum:'{active, passive}'
+npx sequelize-cli model:generate --name Processes --attributes title:string,sourceId:integer,resetTimer:integer,socketId:string,operationStatus:enum:'{disconnected,idle,listening, locked}',status:enum:'{active, passive}'
+npx sequelize-cli model:generate --name Sources --attributes title:string,category:enum:'{bj,bac}',provider:enum:'{evolution, playTect}',type:enum:'{speed, classic}',minimumBet:integer,status:enum:'{active, passive, d}'
+npx sequelize-cli model:generate --name LoggerDetail --attributes logDescription:string,logType:string,logTitle:string,repeatationMax:integer,loggerDegree:integer 
+npx sequelize-cli model:generate --name LoggerUserInfo --attributes userId:integer,loggerDetailId:integer,actionTime:date
+npx sequelize-cli model:generate --name Login --attributes userId:integer,deviceId:integer,loginTine:date,logoutTime:date,sessionId:string,tokenId:string,status:boolean
+npx sequelize-cli model:generate --name Device --attributes deviceType:string,deviceBrand:string,deviceId:string
+npx sequelize-cli model:generate --name AllowedApisTable --attributes apiMethod:string,apiUrl:string,ptId:integer
+npx sequelize-cli model:generate --name PermissionTable --attributes writePermission:boolean,readPermission:boolean,readPermission:boolean,deletePermission:boolean,userId:integer, sourceId:integer
+npx sequelize-cli model:generate --name TableViewPermission --attributes columnInfo:string,userId:integer,sourceTableId:integer,ptId:integer
+npx sequelize-cli model:generate --name OriginTable --attributes origin:string
+
+
